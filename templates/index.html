@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-title" content="Dashboard" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="theme-color" content="#181b22" />
+      <title>My Dashboard</title>
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+<body>
+    <header class="top-bar">
+          <div>
+                  <h1>My Dashboard</h1>
+                <p id="date-line" class="subtitle"></p>p>
+          </div>
+        <div class="clock" id="clock">--:--:--</div>
+    </header>header>
+
+  <main class="grid">
+      <!-- ROW 1: Weather + Transport -->
+      <section class="card card-accent-3">
+            <div class="card-head">
+                    <h2 id="weather-title">Weather</h2>
+                    <div class="card-actions">
+                              <button id="edit-weather-btn" title="Change location">&#9881;</button>button>
+                    </div>
+            </div>
+            <div class="big-line" id="weather-temp">&ndash;&deg;C</div>
+            <div class="sub-line" id="weather-desc">Loading&hellip;</div>
+            <div class="medium" id="weather-extra"></div>
+      </section>section>
+  
+      <section class="card card-accent-5">
+            <div class="card-head">
+                    <h2>&#128652; Transport</h2>
+                    <div class="card-actions">
+                              <button id="edit-transport-btn" title="Edit stops &amp; walking">&#9998;</button>button>
+                              <button id="refresh-transport-btn" title="Refresh">&#128260;</button>button>
+                    </div>
+            </div>
+            <div class="sub-line" id="transport-route">Loading&hellip;</div>
+            <div id="transport-list"></div>
+      </section>section>
+  
+      <!-- ROW 2: Notes (full width) -->
+      <section class="card card-accent-7 full">
+            <div class="card-head"><h2>&#128221; Quick Notes</h2></div>
+            <form id="note-form" class="note-add">
+                    <input id="note-input" type="text" placeholder="Add a note... (Enter to save)" autocomplete="off" />
+                    <button type="submit" title="Add">+</button>button>
+            </form>form>
+            <ul id="notes-list" class="notes-list"></ul>ul>
+            <div class="tiny" id="notes-empty" style="display:none;">No notes yet &mdash; add one above! &#10024;</div>
+      </section>section>
+  
+      <!-- ROW 3: Today's Game + Currently Playing + Quote -->
+      <section class="card card-accent-1">
+            <div class="card-head">
+                    <h2>&#127918; Today's Game</h2>
+                    <div class="card-actions">
+                              <button id="reroll-btn" title="Pick another">&#127922;</button>button>
+                              <button id="edit-games-btn" title="Edit library">&#9998;</button>button>
+                    </div>
+            </div>
+            <div class="big-line" id="todays-game">Loading&hellip;</div>
+            <div class="tiny" id="library-count"></div>
+      </section>section>
+  
+      <section class="card card-accent-2">
+            <div class="card-head">
+                    <h2>&#127918; Currently Playing</h2>
+                    <div class="card-actions">
+                              <button id="edit-current-btn" title="Update">&#9998;</button>button>
+                    </div>
+            </div>
+            <div class="big-line" id="current-game">Loading&hellip;</div>
+            <div class="sub-line" id="current-doing"></div>
+      </section>section>
+  
+      <section class="card card-accent-6">
+            <div class="card-head"><h2>&#128172; Quote of the Day</h2></div>
+            <blockquote id="quote-text">Loading&hellip;</blockquote>blockquote>
+            <div class="sub-line" id="quote-author"></div>
+      </section>section>
+  </main>main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+      <div class="modal-inner">
+            <h3 id="modal-title">Edit</h3>
+            <div id="modal-body"></div>
+            <div class="modal-actions">
+                    <button id="modal-cancel" class="secondary">Cancel</button>button>
+                    <button id="modal-save">Save</button>button>
+            </div>
+      </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>html></h2></h1>
+          </div>
+</body></title>
+  </head>
